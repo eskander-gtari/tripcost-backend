@@ -1,0 +1,11 @@
+@startuml
+participant Navigateur
+participant Vue
+Navigateur -> Controleur:Get/ créerSondage
+Controleur -> Controleur:verifieMembre
+Controleur -> Vue:formulaire.jsp
+Vue -> Navigateur: formulaire pour faire le point sur une situation
+Navigateur ->Controleur:Post/créerQuestion avec type de réponse,date butoir et listes des membres à sonder
+Controleur -> Controleur:vérifier date butoire et liste des membres
+Controleur -> Model:nouveauSondage
+@enduml
